@@ -1,0 +1,1 @@
+Add-Migration -StartupProjectName VoloteaTest.WebApi -ProjectName VoloteaTest.EF
