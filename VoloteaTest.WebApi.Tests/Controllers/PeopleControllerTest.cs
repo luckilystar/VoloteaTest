@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using VoloteaTest.Core.Models.People;
+using VoloteaTest.Repository.People;
+using VoloteaTest.Service.People;
 using VoloteaTest.WebApi.Controllers;
 
 namespace VoloteaTest.WebApi.Tests.Controllers
@@ -14,7 +16,7 @@ namespace VoloteaTest.WebApi.Tests.Controllers
         [TestInitialize]
         public void Setup()
         {
-            _controller = new PeopleController(new Service.People.PeopleService(new Repository.People.PeopleRepository()));
+            _controller = new PeopleController(new PeopleService(new PeopleRepository()));
         }
         [TestMethod]
         public void Get()
