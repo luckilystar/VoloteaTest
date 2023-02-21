@@ -9,7 +9,6 @@ namespace VoloteaTest.WebApi.Controllers
     public class PeopleController : ApiController
     {
         private IPeopleService _peopleService;
-        public PeopleController() { }
         public PeopleController(IPeopleService peopleService)
         {
             _peopleService = peopleService;

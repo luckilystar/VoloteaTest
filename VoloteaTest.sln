@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoloteaTest.EF", "VoloteaTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoloteaTest.WebApi", "VoloteaTest.WebApi\VoloteaTest.WebApi.csproj", "{18008A4C-E0CE-4F37-934A-80567A3CC211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoloteaTest.Repository", "VoloteaTest.Repositories\VoloteaTest.Repository.csproj", "{E9CDF938-D573-421C-91A2-79DC5DFF9B0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoloteaTest.Repository", "VoloteaTest.Repository\VoloteaTest.Repository.csproj", "{E9CDF938-D573-421C-91A2-79DC5DFF9B0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
