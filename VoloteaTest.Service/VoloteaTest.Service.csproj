@@ -80,10 +80,6 @@
       <Project>{86beb501-6c3e-46c3-8005-a9cfd0aedf71}</Project>
       <Name>VoloteaTest.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VoloteaTest.Repositories\VoloteaTest.Repository.csproj">
-      <Project>{E9CDF938-D573-421C-91A2-79DC5DFF9B0D}</Project>
-      <Name>VoloteaTest.Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
