@@ -106,9 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
-    <Compile Include="Services\PeopleRepositoryTest.cs" />
+    <Compile Include="Controllers\PeopleControllerTest.cs" />
+    <Compile Include="Repositories\PeopleRepositoryTest.cs" />
+    <Compile Include="Services\PeopleServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -124,6 +124,10 @@
     <ProjectReference Include="..\VoloteaTest.EF\VoloteaTest.EF.csproj">
       <Project>{86beb501-6c3e-46c3-8005-a9cfd0aedf71}</Project>
       <Name>VoloteaTest.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VoloteaTest.Repositories\VoloteaTest.Repository.csproj">
+      <Project>{E9CDF938-D573-421C-91A2-79DC5DFF9B0D}</Project>
+      <Name>VoloteaTest.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\VoloteaTest.Service\VoloteaTest.Service.csproj">
       <Project>{67cbde44-3769-4b16-a369-61874f8aee9f}</Project>

@@ -3,17 +3,18 @@ using System;
 using VoloteaTest.Core.Models.People;
 using VoloteaTest.Service.People;
 using System.Linq;
+using VoloteaTest.Repository.People;
 
 namespace VoloteaTest.WebApi.Tests.Services
 {
     [TestClass]
-    public class PeopleRepositoryTest
+    public class PeopleServiceTest
     {
-        private PeopleRepository _peopleRepository;
+        private PeopleService _peopleService;
         [TestInitialize]
         public void Setup()
         {
-            _peopleRepository = new PeopleRepository();
+            _peopleService = new PeopleService(new PeopleRepository());
         }
         [TestMethod]
         public void InsertPerson()
@@ -27,23 +28,21 @@ namespace VoloteaTest.WebApi.Tests.Services
                 LastName = "Last Name 1",
                 PhoneNumber = "12345678"
             };
-            var countBefore = _peopleRepository.GetAll().Count();
-            _peopleRepository.Insert(p);
-            _peopleRepository.Save();
-            var countAfter = _peopleRepository.GetAll().Count();
+            var countBefore = _peopleService.GetAll().Count();
+            _peopleService.Insert(p);
+            var countAfter = _peopleService.GetAll().Count();
             Assert.AreEqual(countBefore+1, countAfter);
         }
 
         [TestMethod]
         public void UpdatePerson()
         {
-            var person = _peopleRepository.GetAll().FirstOrDefault();
+            var person = _peopleService.GetAll().FirstOrDefault();
             if (person != null)
             {
                 person.Address = "This is the change of Address";
-                _peopleRepository.Update(person);
-                _peopleRepository.Save();
-                var personAfter = _peopleRepository.GetById(person.Id);
+                _peopleService.Update(person);
+                var personAfter = _peopleService.GetById(person.Id);
                 Assert.AreEqual(personAfter.Address, person.Address);
             }
             else
@@ -55,12 +54,11 @@ namespace VoloteaTest.WebApi.Tests.Services
         [TestMethod]
         public void DeletePerson()
         {
-            var person = _peopleRepository.GetAll().FirstOrDefault();
+            var person = _peopleService.GetAll().FirstOrDefault();
             if (person != null)
             {
-                _peopleRepository.Delete(person.Id);
-                _peopleRepository.Save();
-                var personAfter = _peopleRepository.GetById(person.Id);
+                _peopleService.Delete(person.Id);
+                var personAfter = _peopleService.GetById(person.Id);
                 Assert.IsNull(personAfter);
             }
             else

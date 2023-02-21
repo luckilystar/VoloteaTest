@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using VoloteaTest.Core.Models.People;
+using VoloteaTest.Repository;
 using VoloteaTest.Service;
 using VoloteaTest.Service.People;
 
@@ -25,8 +26,11 @@ namespace VoloteaTest.WebApi
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var builder = new ContainerBuilder();
-            builder.RegisterInstance(new PeopleRepository())
-                   .As<IPeopleRepository>();
+
+            builder.RegisterModule(new RepositoryModule());
+            builder.RegisterModule(new ServiceModule());
+            builder.RegisterModule(new EF.EFModule());
+
             var container = builder.Build();
         }
     }
