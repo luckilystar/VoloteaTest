@@ -7,7 +7,7 @@ using VoloteaTest.Core.Models.People;
 
 namespace VoloteaTest.Service.People
 {
-    public interface IPeopleRepository:IGenericRepository<Person>
+    public interface IPeopleService:IGenericService<Person>
     {
     }
 }

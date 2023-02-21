@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace VoloteaTest.Service
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericService<T>
     {
         IEnumerable<T> GetAll();
         T GetById(object id);
         void Insert(T obj);
         void Update(T obj);
         void Delete(object id);
-        void Save();
     }
 }
