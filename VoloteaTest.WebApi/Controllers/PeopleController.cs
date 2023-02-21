@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using VoloteaTest.Core.Models.People;
+using VoloteaTest.Core.People.ViewModels;
+using VoloteaTest.Service.People;
 
 namespace VoloteaTest.WebApi.Controllers
 {
     public class PeopleController : ApiController
     {
+        private IPeopleRepository _peopleRepository;
+        public PeopleController() { }
+        public PeopleController(IPeopleRepository peopleRepository)
+        {
+            _peopleRepository = peopleRepository;
+        }
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
@@ -22,12 +27,12 @@ namespace VoloteaTest.WebApi.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public void Post([FromBody] object person)
         {
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] object person)
         {
         }
 
