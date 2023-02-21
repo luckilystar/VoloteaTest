@@ -1,0 +1,1 @@
+update-database -StartupProjectName VoloteaTest.WebApi -ProjectName VoloteaTest.EF -Verbose

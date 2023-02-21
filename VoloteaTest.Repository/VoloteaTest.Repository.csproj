@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67CBDE44-3769-4B16-A369-61874F8AEE9F}</ProjectGuid>
+    <ProjectGuid>{E9CDF938-D573-421C-91A2-79DC5DFF9B0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VoloteaTest.Service</RootNamespace>
-    <AssemblyName>VoloteaTest.Service</AssemblyName>
+    <RootNamespace>VoloteaTest.Repository</RootNamespace>
+    <AssemblyName>VoloteaTest.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -64,12 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericService.cs" />
-    <Compile Include="IGenericService.cs" />
-    <Compile Include="People\IPeopleService.cs" />
-    <Compile Include="People\PeopleService.cs" />
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="People\IPeopleRepository.cs" />
+    <Compile Include="People\PeopleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceModule.cs" />
+    <Compile Include="RepositoryModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VoloteaTest.Core\VoloteaTest.Core.csproj">
@@ -81,7 +81,6 @@
       <Name>VoloteaTest.EF</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

@@ -1,39 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using VoloteaTest.Core.Models.People;
+using VoloteaTest.Repository.People;
+using VoloteaTest.Service.People;
 
 namespace VoloteaTest.WebApi.Controllers
 {
     public class PeopleController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private IPeopleService _peopleService;
+        public PeopleController(IPeopleService peopleService)
         {
-            return new string[] { "value1", "value2" };
+            _peopleService = peopleService;
+        }
+        // GET api/<controller>
+        public IEnumerable<Person> Get()
+        {
+            return _peopleService.GetAll();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public Person Get(int id)
         {
-            return "value";
+            return _peopleService.GetById(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Person person)
         {
+            _peopleService.Insert(person);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromBody] Person person)
         {
+            _peopleService.Update(person);
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            _peopleService.Delete(id);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using VoloteaTest.EF;
 
-namespace VoloteaTest.Service
+namespace VoloteaTest.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
