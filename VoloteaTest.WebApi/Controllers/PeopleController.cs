@@ -15,30 +15,33 @@ namespace VoloteaTest.WebApi.Controllers
             _peopleRepository = peopleRepository;
         }
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<Person> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _peopleRepository.GetAll();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public Person Get(int id)
         {
-            return "value";
+            return _peopleRepository.GetById(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody] object person)
+        public void Post([FromBody] Person person)
         {
+            _peopleRepository.Insert(person);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody] object person)
+        public void Put([FromBody] Person person)
         {
+            _peopleRepository.Update(person);
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            _peopleRepository.Delete(id);
         }
     }
 }
