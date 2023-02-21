@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IGenericRepository.cs" />
+    <Compile Include="People\IPeopleRepository.cs" />
     <Compile Include="People\PeopleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

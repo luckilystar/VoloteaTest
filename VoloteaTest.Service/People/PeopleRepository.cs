@@ -2,7 +2,7 @@
 
 namespace VoloteaTest.Service.People
 {
-    public class PeopleRepository:GenericRepository<Person>
+    public class PeopleRepository:GenericRepository<Person>,IPeopleRepository
     {
     }
 }
